@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import 'animate.css';
+import MamasHand from "./MamasHand";
 
 const ECard = () => {
     const [showCard, setShowCard] = useState(false);
@@ -18,6 +19,7 @@ const ECard = () => {
             </div>
            ) : (
             <div className="ecard-content animate__animated animate__fadeInDownBig">
+                <MamasHand />
                 <h1>Happy Mother's Day!</h1>
                 <p>Dear Mom,</p>
                 <p>Thank you for your endless love and support.</p>
@@ -27,6 +29,7 @@ const ECard = () => {
                 <p>Love, Brittani</p>
                 <button onClick={() => setShowCard(false)}>Back</button>
             </div>
+            
            )}
         </div>
     )
