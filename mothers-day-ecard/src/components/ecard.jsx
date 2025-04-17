@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import 'animate.css';
 
 const ECard = () => {
     const [showCard, setShowCard] = useState(false);
@@ -10,7 +11,7 @@ const ECard = () => {
     return(
         <div className="title-screen">
            {!showCard ? (
-            <div className="title-content">
+            <div className="animate__fadeInDownBig">
                 <h1>Happy Mothers Day!</h1>
                 <p>Click below to view your e-card</p>
                 <button onClick={handleStartClick}>View Message</button>
