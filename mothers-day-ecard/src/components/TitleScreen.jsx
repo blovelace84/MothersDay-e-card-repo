@@ -1,14 +1,22 @@
-import React from "react";
-import "./TitleScreen.css";
+import React, { useState } from "react";
+import MessageDisplay from './MessageDisplay';
+import './TitleScreen.css';
 
-const TitleScreen = ({ onStart }) => {
+const TitleScreen = () => {
+    const [message, setMessage] = useState("");
+
+    const handleClick = () => {
+        setMessage("Happy Mother's Day Mommy! I love you very much! You are the best mom in the world and I will forever hold on to your hand!");
+    };
+
     return(
-        <div className="aurora-container">
-            <h1>Happy Mothers Day Mommy!</h1>
-            <p>Click Below to view your card.</p>
-            <button onClick={onStart}>View Message</button>
+        <div className="title-screen">
+            <div className="title-content">
+                <button onClick={handleClick} className="title-button">View Message</button>
+            </div>
+            <MessageDisplay message={message} />
         </div>
-    )
-}
+    );
+};
 
 export default TitleScreen;
