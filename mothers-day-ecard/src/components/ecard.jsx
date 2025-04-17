@@ -11,13 +11,13 @@ const ECard = () => {
     return(
         <div className="title-screen">
            {!showCard ? (
-            <div className="animate__fadeInDownBig">
-                <h1>Happy Mothers Day!</h1>
+            <div className="title-content animate__animated animate__fadeIn">
+                <h1>You Got a Mother's Day Card!</h1>
                 <p>Click below to view your e-card</p>
                 <button onClick={handleStartClick}>View Message</button>
             </div>
            ) : (
-            <div className="ecard-content">
+            <div className="ecard-content animate__animated animate__fadeInDownBig">
                 <h1>Happy Mother's Day!</h1>
                 <p>Dear Mom,</p>
                 <p>Thank you for your endless love and support.</p>
