@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import 'animate.css';
+import './ECard.css';
 import Message from "./Message"
 
 

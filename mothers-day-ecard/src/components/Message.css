@@ -1,0 +1,75 @@
+.ecard-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: beige;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.ecard-content{
+    background-color: aqua;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(120, 33, 200, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    text-align: center;
+    animation-duration: 1s;
+}
+
+/* Fallback content styling */
+.fallback-content {
+    text-align: center;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    animation-duration: 1s; /* Animation duration for animate.css */
+}
+
+/* Header styling */
+.ecard-content h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #ff6f61; /* Soft red */
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.ecard-content p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Button styling */
+.ecard-content button {
+    background-color: #ff6f61; /* Soft red */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.ecard-content button:hover {
+    background-color: #e65a50; /* Slightly darker red on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .ecard-content {
+        padding: 20px;
+    }
+
+    .ecard-content h1 {
+        font-size: 2rem;
+    }
+
+    .ecard-content p {
+        font-size: 1rem;
+    }
+}
