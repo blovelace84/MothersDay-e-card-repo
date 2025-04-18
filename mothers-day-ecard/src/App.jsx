@@ -1,13 +1,17 @@
-import React from 'react'
-import './App.css'
-import ECard from './components/ecard'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Message from "./components/Message";
+import ECard from "./components/ecard";
 
-function App() {
-  return (
-    <div className='app'>
-      <ECard />
-    </div>
-  )
-}
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<ECard />} />
+                <Route path="/message" element={<Message />} />
+            </Routes>
+        </Router>
+    );
+};
 
-export default App
+export default App;
