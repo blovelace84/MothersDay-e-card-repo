@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Mama from "../assets/Mama.jpg"; // Import Mama image
 import Atropos from "atropos/react"; // Import Atropos
 import "atropos/css"; // Import Atropos CSS
 import './Message.css';
@@ -25,6 +26,7 @@ const Message = ({ message }) => {
                 >
                     <MamasHand />
                     <h1>Happy Mother's Day!</h1>
+                    <img src={Mama} alt="Mama" />
                     <p>Dear Mom,</p>
                     <p>Thank you for your endless love and support.</p>
                     <p>You are the heart of our family.</p>

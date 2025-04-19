@@ -55,6 +55,20 @@
     margin-top: 20px;
 }
 
+.ecard-content img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(120, 33, 200, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.ecard-content img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
 .ecard-content button:hover {
     background-color: #e65a50; /* Slightly darker red on hover */
 }
