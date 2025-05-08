@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Mama from "../assets/Mama.jpg"; // Import Mama image
-import Atropos from "atropos/react"; // Import Atropos
-import "atropos/css"; // Import Atropos CSS
+import Mama from "../assets/Mama.jpg";
+import Atropos from "atropos/react";
+import "atropos/css";
 import './Message.css';
 import 'animate.css';
 import MamasHand from "./MamasHand";
+import FallbackContent from "./FallbackContent";
 
 const Message = ({ message }) => {
     const [showCard, setShowCard] = useState(true);
     const navigate = useNavigate();
+    const stopMusicRef = useRef(null); // Reference to stopMusic function
 
     const handleBackClick = () => {
+        console.log("Back button clicked");
+        if (stopMusicRef.current) {
+            stopMusicRef.current(); // Stop the music
+        }
         navigate("/");
         setShowCard(false);
+    };
+
+    const stopSong = () => {
+        if (stopMusicRef.current) {
+            stopMusicRef.current(); // Stop the music
+        }
     };
 
     return (
@@ -21,10 +33,10 @@ const Message = ({ message }) => {
             {showCard ? (
                 <Atropos
                     className="ecard-content animate__animated animate__fadeInDownBig"
-                    activeOffset={40} // Adjust the 3D effect intensity
-                    shadow={true} // Enable shadow
+                    activeOffset={40}
+                    shadow={true}
                 >
-                    <MamasHand />
+                    <MamasHand stopMusic={(callback) => (stopMusicRef.current = callback)} />
                     <h1>Happy Mother's Day!</h1>
                     <img src={Mama} alt="Mama" />
                     <p>Dear Mom,</p>
@@ -36,10 +48,7 @@ const Message = ({ message }) => {
                     <button onClick={handleBackClick}>Back</button>
                 </Atropos>
             ) : (
-                <div className="fallback-content animate__animated animate__fadeInDownBig">
-                    <h2>You have viewed your card's message.</h2>
-                    <p>Click the browser's back button to return.</p>
-                </div>
+                <FallbackContent stopSong={stopSong} />
             )}
         </div>
     );

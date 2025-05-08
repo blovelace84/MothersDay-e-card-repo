@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 
-const MamasHand = () => {
+const MamasHand = ({ stopMusic }) => {
+    const audioRef = useRef(null);
+
     const playMusic = () => {
-        const audio = new Audio("sounds/mamashand.mp3");
-        audio.play();
+        if (!audioRef.current) {
+            audioRef.current = new Audio("sounds/mamashand.mp3");
+        }
+        audioRef.current.play();
     };
-    return(
+
+    // Stop the music when the parent calls stopMusic
+    if (stopMusic && audioRef.current) {
+        stopMusic(() => {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0; // Reset the audio to the beginning
+        });
+    }
+
+    return (
         <button onClick={playMusic}>Play</button>
     );
-}
+};
 
 export default MamasHand;
